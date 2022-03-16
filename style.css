@@ -1,20 +1,85 @@
 :root {
+  --header-height: 50px;
+  --footer-padding: 25px;
   --containerColor: #fdf6ee;
   --containerColor2: #f8fde1;
   --purple: #331832;
   --cardHeight: 250px;
 }
 
+/*------------------------ ШАПКА ------------------------*/
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: var(--header-height);
+  width: 100%;
+  padding: 0;
+  font-family: Oswald;
+  color: #694D75;
+  letter-spacing: 1px;
+  border-bottom: solid 1px #181820;
+  background-color: var(--purple);
+}
+.mobileHeader {
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  height: 100%;
+  align-items: center;
+}
+
+.headerLink {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.headerLink:hover {
+  background-color: #412c40;
+}
+
+
+/*------------------------ ОБЩЕЕ ------------------------*/
+
+body {
+  font-family: sans-serif;
+  color: #1B5299;
+  background-color: #F1ECCE;
+}
+
 .content-container {
-  min-height: calc(100vh - 176px);
+  min-height: calc(100vh
+    - var(--header-height)
+    - 2 * var(--footer-padding)
+    - 9px);
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
+section {
+  font-size: x-large;
+  text-align: center;
+}
+
 h1 {
   font-family: Oswald;
   text-align: center;
+}
+
+h2 {
+  font-family: Oswald;
+  text-align: center;
+  color: var(--purple);
+}
+
+a {
+  text-decoration: none;
 }
 
 @font-face {
@@ -24,22 +89,8 @@ h1 {
   font-weight: normal;
 }
 
-h2 {
-  font-family: Oswald;
-  text-align: center;
-  color: var(--purple);
-}
 
-.indent {
-  margin-left: 30px;
-}
-
-body {
-  font-family: sans-serif;
-  color: #1B5299;
-  background-color: #F1ECCE;
-}
-
+/*------------------------ ГЛАВНАЯ ------------------------*/
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
@@ -59,6 +110,7 @@ body {
   /*background-color: var(--containerColor);*/
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .card:hover{
@@ -89,6 +141,7 @@ body {
   transition: inherit;
   background-color: #333333;
 }
+
 img {
   object-fit: cover;
   /*position: absolute;*/
@@ -101,68 +154,12 @@ img {
   transition: 0.5s;
 }
 
-button {
-  display: block;
-  margin-top: 25px;
-  box-shadow: 3px 7px 0px #1D1D1D;
-  border-radius: 20px;
-  background-color: dimgray;
-  color: white;
-  width: 173px;
-  height: 30px;
-  cursor: pointer;
-}
-
-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 50px;
-  width: 100%;
-  padding: 0;
-  font-family: Oswald;
-  color: #694D75;
-  letter-spacing: 1px;
-  border-bottom: solid 1px #181820;
-  background-color: var(--purple);
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
-  height: 100%;
-  align-items: center;
-}
-
-a {
-  text-decoration: none;
-}
-
 .images {
   max-height: 50vh;
   margin: 20px;
 }
 
-
-footer {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  background-color: #331832;
-  color: #694D75;
-  padding: 20px;
-  height: 25px
-}
-
-section {
-  font-size: x-large;
-  text-align: center;
-}
-
-p {
-  text-align: justify;
-}
+/*------------------------ СТАТЬИ ------------------------*/
 
 article {
   margin-top: 20px;
@@ -187,12 +184,93 @@ article {
   content: "подробнее...";
 }
 
-.headerLink {
-  padding: 10px;
-  border-radius: 5px;
+/*------------------------ ПОДВАЛ ------------------------*/
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #331832;
+  color: #694D75;
+  padding: 20px;
 }
 
-.headerLink:hover {
-  background-color: #412c40;
+p {
+  text-align: justify;
 }
 
+/*------------------------ АДАПТИВНОСТЬ ------------------------*/
+
+@media screen and (max-width: 1020px) {
+  .content-container {
+  min-height: calc(100vh
+    - var(--header-height)
+    - 2 * var(--footer-padding)
+    - 9px);
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    display: none;
+  }
+
+  .mobileHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: var(--header-height);
+    width: 100%;
+    padding: 0;
+    font-family: Oswald;
+    color: #694D75;
+    letter-spacing: 1px;
+    border-bottom: solid 1px #181820;
+    background-color: var(--purple);
+  }
+
+  #menuBurger {
+    padding: 5px;
+    cursor: pointer;
+  }
+
+
+  .cardContainer {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: var(--cardHeight);
+    width: 90%;
+    padding: 0 15px 15px;
+    margin: 25px auto 20px;
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+
+  .images {
+    max-height: none;
+    width: 100%;
+    margin: 0px;
+  }
+
+  article {
+    margin-top: 20px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--containerColor2);
+    padding: 10px;
+    border: 1px solid #d2cbc2;
+  }
+}
