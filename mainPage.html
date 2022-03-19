@@ -23,39 +23,42 @@
   </nav>
 </header>
 <header class="mobileHeader">
-  <svg version="1.1" id="menuBurger" xmlns="http://www.w3.org/2000/svg" width="35px" height="25px">
-    <path stroke="#8693AB" d="M0 2 H 25 M0 12 H 25 M0 22 H 25"/>
-  </svg>
+  <div id="menuBurgerContainer" onclick="showMenu()">
+    <svg  version="1.1" id="menuBurger" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px">
+      <path stroke="#8693AB" d="M0 2 H 25 M0 12 H 25 M0 22 H 25"/>
+    </svg>
+  </div>
   <a class="headerLink" href="mainPage.html">Главная</a>
 </header>
 <div class="content-container">
   <div class="cardContainer">
     <section class="card">
-      <h2>Физика</h2>
-      <div class="mainCardImage">
-        <img src="https://images.wallpaperscraft.ru/image/single/kosmonavt_koltso_neon_156673_1920x1080.jpg">
-        <p class="cardHiddenText">Lorem ipsum sfeij slsldkfj sjiejflsfjgrajafe ajfejs</p>
-      </div>
-    </section>
-    <section class="card">
-      <h2>Xимия</h2>
+      <a class="aCard" href="Physics.html"><h2>Физика</h2>
       <div class="mainCardImage">
         <img src="images/scale_1200.webp.jpg">
         <p class="cardHiddenText">Lorem ipsum sfeij slsldkfj sjiejflsfjgrajafe ajfejs</p>
-      </div>
+      </div></a>
     </section>
     <section class="card">
-      <h2></h2>
+      <a class="aCard" href="Maths.html"><h2>Математика</h2>
       <div class="mainCardImage">
-        <img src="images/scale_1200.webp.jpg">
+        <img src="images/chemistry.jpg">
         <p class="cardHiddenText">Lorem ipsum sfeij slsldkfj sjiejflsfjgrajafe ajfejs</p>
-      </div>
+      </div></a>
     </section>
     <section class="card">
+      <a class="aCard" href="Astronomy.html"><h2>Астрономия</h2>
       <div class="mainCardImage">
-        <img src="images/scale_1200.webp.jpg">
+        <img src="images/Astronomy.jpg">
         <p class="cardHiddenText">Lorem ipsum sfeij slsldkfj sjiejflsfjgrajafe ajfejs</p>
-      </div>
+      </div></a>
+    </section>
+    <section class="card">
+      <a class="aCard" href="Medicine.html"><h2>Медицина</h2>
+      <div class="mainCardImage">
+        <img src="images/medicine.jpg">
+        <p class="cardHiddenText">Lorem ipsum sfeij slsldkfj sjiejflsfjgrajafe ajfejs</p>
+      </div></a>
     </section>
 
   </div>
@@ -65,6 +68,8 @@
 <footer>
   2021 (с) dadaetoartur MIREA student. Все права защищены.
 </footer>
+
+<script src="scripts.js"></script>
 
 </body>
 </html>

@@ -96,10 +96,16 @@ a {
   flex-wrap: wrap;
 }
 
-.card {
+.aCard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 15px;
+}
+
+.card {
   height: var(--cardHeight);
   width: 40%;
   padding: 0 15px 15px;
@@ -107,9 +113,8 @@ a {
   border: 2px solid var(--purple);
   border-radius: 10px;
   overflow: hidden;
-  /*background-color: var(--containerColor);*/
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
-  transition: 0.5s;
+  transition: all 0.5s;
   cursor: pointer;
 }
 
@@ -126,8 +131,8 @@ a {
 }
 
 .card:hover .cardHiddenText {
-  transform: translate(calc(0 - var(--cardHeight)*90%));
   display: block;
+  color: white;
 }
 
 .mainCardImage{
@@ -143,15 +148,18 @@ a {
 }
 
 img {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
-  /*position: absolute;*/
   transition: inherit;
 }
 
 .cardHiddenText {
+  position: absolute;
+  width: 90%;
   display: none;
-  color: white;
-  transition: 0.5s;
+  color: #333333;
+  transition: inherit;
 }
 
 .images {
@@ -229,8 +237,14 @@ p {
     background-color: var(--purple);
   }
 
+  #menuBurgerContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
   #menuBurger {
-    padding: 5px;
+    padding: 0 15px;
     cursor: pointer;
   }
 
