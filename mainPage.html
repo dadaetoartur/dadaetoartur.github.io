@@ -15,7 +15,7 @@
 >
 <header>
   <a class="headerLink" href="mainPage.html">Главная</a>
-  <nav>
+  <nav class="mainLinks">
     <a class="headerLink" href="Physics.html">Физика</a>
     <a class="headerLink" href="Medicine.html">Медицина</a>
     <a class="headerLink" href="Astronomy.html">Астрономия</a>
@@ -23,13 +23,17 @@
   </nav>
 </header>
 <header class="mobileHeader">
-  <div id="menuBurgerContainer" onclick="showMenu()">
-    <svg  version="1.1" id="menuBurger" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px">
-      <path stroke="#8693AB" d="M0 2 H 25 M0 12 H 25 M0 22 H 25"/>
-    </svg>
-  </div>
+  <svg  version="1.1" id="menuBurger" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px">
+    <path stroke="#8693AB" d="M0 2 H 25 M0 12 H 25 M0 22 H 25"/>
+  </svg>
   <a class="headerLink" href="mainPage.html">Главная</a>
 </header>
+<nav id="hiddenMenu">
+  <a class="headerLink" href="Physics.html">Физика</a>
+  <a class="headerLink" href="Medicine.html">Медицина</a>
+  <a class="headerLink" href="Astronomy.html">Астрономия</a>
+  <a class="headerLink" href="Genetic.html">Генетика</a>
+</nav>
 <div class="content-container">
   <div class="cardContainer">
     <section class="card">
